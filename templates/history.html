@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table tablenew">
+        <thead>
+        <tr>
+            <th>User name: {{ name }}</th>
+        </tr>
+        <tr>
+            <th>Current cash balance: {{ cash }}</th>
+        </tr>
+        <tr>
+            <th>Total cash + stock value:  {{ net }}</th>
+        </tr>
+        </thead>
+    </table>
+    <table class="table table-striped">
+        <tr></tr>
+        <tr></tr>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price per Share when Purchased</th>
+                <th>When</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <div></div>
+        <div></div>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.symbol }}</td>
+                    <td>{{ transaction.shares }}</td>
+                    <td>${{ transaction.purchase_price }}</td>
+                    <td>{{ transaction.when }}</td>
+                    <td>${{ (transaction.shares * transaction.purchase_price) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
