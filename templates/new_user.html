@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" style="width:80%">
+        <tr>
+            <td>User name: {{ name }}</td>
+        </tr>
+        <tr>
+            <td>Current cash balance: {{ cash }}</td>
+        </tr>
+    </table>
+{% endblock %}
+

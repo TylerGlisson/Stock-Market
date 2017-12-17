@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <table class="table tablenew">
+        <thead>
+        <tr>
+            <th>User name: {{ name }}</th>
+        </tr>
+        <tr>
+            <th>Current cash balance: {{ cash }}</th>
+        </tr>
+        <tr>
+            <th>Total cash + stock value:  {{ net }}</th>
+        </tr>
+        </thead>
+    </table>
+    <table class="table table-striped">
+        <tr></tr>
+        <tr></tr>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price Per Share</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <div></div>
+        <div></div>
+        <tbody>
+            {% for symbols in portfolio %}
+                <tr>
+                    <td>{{ symbols.symbol }}</td>
+                    <td>{{ symbols.shares }}</td>
+                    <td>${{ symbols.current_price }}</td>
+                    <td>${{ symbols.value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

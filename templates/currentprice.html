@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Current Stock Price
+{% endblock %}
+
+{% block main %}
+    <table boarder-spacing: 0.3rem; style="width:90%">
+        <tr>
+            <th>Name</th>
+            <th>Price Per Share</th>
+            <th>Symbol</th>
+        </tr>
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ price }}</td>
+            <td>{{ symbol }}</td>
+        </tr>
+    </table>
+{% endblock %}
+
