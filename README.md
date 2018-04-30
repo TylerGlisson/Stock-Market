@@ -1,2 +1,2 @@
 # Stock-Market
-This was a CS50 project that encapsulated front-end and back-end development topics
+CS50 project encapsulating front-end and back-end development topics: HTML, CSS, Python, Flask, Jinja, SQL
